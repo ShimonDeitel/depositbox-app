@@ -1,0 +1,29 @@
+{
+  "identifier": "Depositbox",
+  "nonRenewingSubscriptions": [],
+  "products": [
+    {
+      "displayPrice": "2.99",
+      "familyShareable": false,
+      "internalID": "depositbox_pro",
+      "localizations": [
+        {
+          "description": "Refund/forfeit reason log and printable receipts",
+          "displayName": "Depositbox Pro",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "com.shimondeitel.depositbox.pro",
+      "referenceName": "Depositbox Pro",
+      "type": "NonConsumable"
+    }
+  ],
+  "settings": {
+    "_storeKitErrors": []
+  },
+  "subscriptionGroups": [],
+  "version": {
+    "major": 3,
+    "minor": 0
+  }
+}
