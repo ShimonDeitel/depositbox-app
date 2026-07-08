@@ -13,9 +13,33 @@
   .cta { display:inline-block; margin-top: 24px; padding: 12px 28px; border-radius: 10px; background: #2e7d6b; color: #111; text-decoration: none; font-weight: 600; }
   footer { margin-top: 48px; font-size: 0.85rem; color: #888; }
   .badge { display:inline-block; padding:6px 14px; border:1px solid #2e7d6b; border-radius:999px; color:#2e7d6b; margin-bottom:24px; }
+
+  @keyframes floatOrb {
+    0%, 100% { transform: translate(0,0) scale(1); }
+    50% { transform: translate(30px,-40px) scale(1.08); }
+  }
+  @keyframes fadeUp {
+    from { opacity:0; transform: translateY(16px); }
+    to { opacity:1; transform: translateY(0); }
+  }
+  .orb {
+    position: fixed; top: -120px; right: -120px; width: 420px; height: 420px;
+    background: radial-gradient(circle, #2e7d6b55 0%, #2e7d6b00 70%);
+    filter: blur(10px); pointer-events: none; z-index: 0;
+    animation: floatOrb 9s ease-in-out infinite;
+  }
+  .wrap { position: relative; z-index: 1; }
+  h1 { animation: fadeUp 0.8s ease-out both; }
+  p.tagline { animation: fadeUp 0.8s ease-out 0.15s both; }
+  .feature { animation: fadeUp 0.8s ease-out both; transition: transform 0.25s ease; }
+  .feature:nth-of-type(1) { animation-delay: 0.3s; }
+  .feature:nth-of-type(2) { animation-delay: 0.45s; }
+  .feature:hover { transform: translateY(-3px); }
+  footer { animation: fadeUp 0.8s ease-out 0.6s both; }
 </style>
 </head>
 <body>
+<div class="orb"></div>
 <div class="wrap">
 <div class="badge">Depositbox</div>
 <h1 style="text-align:center">Depositbox</h1>
