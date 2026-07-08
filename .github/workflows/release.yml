@@ -3,6 +3,7 @@ on:
   workflow_dispatch:
   push:
     branches: [master]
+    paths: ['iOS/**']
 jobs:
   build:
     runs-on: macos-15
