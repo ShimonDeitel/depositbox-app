@@ -27,6 +27,11 @@ jobs:
       - run: xcodebuild -version
       - run: brew install xcodegen
       - run: xcodegen generate
+      - name: Derive correct project/scheme name from project.yml
+        run: |
+          PROJ=$(grep -m1 '^name:' project.yml | sed 's/^name:[[:space:]]*//')
+          echo "APP_NAME=$PROJ" >> "$GITHUB_ENV"
+          echo "SCHEME=$PROJ" >> "$GITHUB_ENV"
 
       - name: Pick simulator device
         id: sim
