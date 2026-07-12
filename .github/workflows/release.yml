@@ -121,6 +121,7 @@ jobs:
 
       - name: Upload app screenshot via ASC API
         if: env.APP_ID != ''
+        continue-on-error: true
         env:
           ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
           ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
@@ -130,6 +131,7 @@ jobs:
 
       - name: Upload IAP review screenshot via ASC API
         if: env.IAP_ID != ''
+        continue-on-error: true
         env:
           ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
           ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
